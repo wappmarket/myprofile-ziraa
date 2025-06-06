@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Zira</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffdce3, #fff1f5);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.6em;
+      color: #b03a5c;
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin: 30px auto;
+      max-width: 700px;
+      padding: 0 20px;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.04);
+    }
+
+    .footer {
+      margin: 40px 0 20px;
+      font-size: 1em;
+      color: #666;
+    }
+
+    #typing {
+      font-size: 1.1em;
+      color: #702b43;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+      line-height: 1.7;
+      white-space: pre-line;
+      min-height: 150px;
+    }
+
+    /* Heart effect styles */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: #e63946;
+      transform: rotate(45deg);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 9999;
+      animation: floatUp linear forwards;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #e63946;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-150vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Tombol musik */
+    #music-control {
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #b03a5c;
+      color: white;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(176,58,92,0.6);
+      transition: background-color 0.3s ease;
+    }
+    #music-control:hover {
+      background-color: #872c46;
+    }
+  </style>
+</head>
+<body>
+  <h1>Forr my girll❤❤</h1>
+
+  <div class="message">
+    haii sayanggg  
+    akuu beruntungg mengenall muu,  
+    hebatt yaa ceritaa kitaa udaa sejauhh inii  
+    kitaa lewatinn semuaa masalahh dengann baikk,  
+    semogaa seteruss nyaa kitaa jauhh lebihh baikk yaa,  
+    akuu akann perbaikin dirii jauhh lebihh baikk untukk mu  
+  </div>
+
+  <div class="gallery">
+    <img src="https://files.catbox.moe/e850es.jpg" alt="Zira 1">
+    <img src="https://files.catbox.moe/sc1pmj.jpg" alt="Zira 2">
+    <img src="https://files.catbox.moe/qc6ls8.jpg" alt="Zira 3">
+    <img src="https://files.catbox.moe/c9eb1t.jpg" alt="Zira 4">
+  </div>
+
+  <!-- Tombol kontrol musik -->
+  <button id="music-control">Pause Musik</button>
+
+  <div id="typing"></div>
+
+  <div class="footer">Dari aku, yang selalu sayang kamu.</div>
+
+  <!-- Audio lagu Mangu -->
+  <audio id="background-music" loop>
+    <source src="https://files.catbox.moe/gts0kr.mp3" type="audio/mpeg" />
+    Browsermu tidak mendukung audio.
+  </audio>
+
+  <script>
+    const music = document.getElementById('background-music');
+    const btn = document.getElementById('music-control');
+
+    music.volume = 0.3;
+
+    window.onload = () => {
+      music.play().catch(() => {
+        document.body.addEventListener('click', () => music.play());
+      });
+
+      typeWriter();
+
+      setInterval(createHeart, 300);
+    };
+
+    btn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = 'Pause Musik';
+      } else {
+        music.pause();
+        btn.textContent = 'Play Musik';
+      }
+    });
+
+    const text = `aku mau jawab pertanyaan kamu, kenapa aku bisa sesuka itu sama kamu??
+
+if you knew how amazing you are, how thoughtful, how funny, how kind, how handsome, how generous, how forgiving, how wonderful, how silly, how serious, how deep, how affectionate, how playful, how brilliant, how creative, how indescribable you are.
+
+pokoknya aku suka kamu itu bukan karena cuma rasa penasaran. kamu baik, kamu seseorang yang bisa bikin aku jatuh hati sama kamu.
+
+ga gampang buat bikin aku jatuh hati, dan kamu bisa bikin aku begitu.
+
+i like you because i know you are a good person and can treat people well.
+
+sebenernya aku suka kamu tanpa alasan, tapi karena ditanya ya aku berusaha jawab dengan jujur.
+
+tapi percaya deh, aku suka kamu itu tulus tanpa harus mikirin hal apa yang ada di diri kamu biar bisa aku sukain.
+
+intinya, i like you without any reason, things that add to the impression i like you are just a bonus.
+
+aku suka kamu apa adanya, dan tanpa ngeliat kelebihan atau kekurangan kamu.`;
+
+    let i = 0;
+    const speed = 25;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+  </script>
+</body>
+</html>
